@@ -122,8 +122,7 @@ def run_sender(file_nm):
         # print(filename)
         # print(type(filename))
         msg = MIMEMultipart()
-        # msg['FROM']="biscuit01010000@gmail.com"
-        msg['TO'] = "biscuit01010000@gmail.com"
+        msg['TO'] = "TO_EMAIL_ADDRESS@gmail.com"
 
         msg['Subject']='Hi This is an pdf for '+ name
         body = "Hello"
@@ -143,11 +142,11 @@ def run_sender(file_nm):
         smtp.ehlo()
         smtp.starttls()
         smtp.ehlo()
-        smtp.login('lokesh27dinu@gmail.com','Kars27032001')
+        smtp.login('FROM_EMAIL@gmail.com','PASSWORD')
         # subject='Hi I am Lokesh'
         # body='Hello! Welcome to Gmail2.'
         # message = f'Subject:{subject}\n\n{body}'
-        smtp.sendmail('lokesh27dinu@gmail.com',emails[j],msg.as_string())
+        smtp.sendmail('FROM_EMAIL@gmail.com',emails[j],msg.as_string())
         smtp.close()
         print('DONE ' + 'for ' + name)
         j+=1
